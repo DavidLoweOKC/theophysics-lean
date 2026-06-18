@@ -26,9 +26,11 @@ The repo contains the Lean files needed to reproduce the current formal layer:
 
 If you are not a Lean user, start with:
 
-1. `WALKTHROUGH.md`
-2. `REPRODUCIBILITY.md`
-3. `INVENTORY.md`
+1. `PROOF_PACKET.md`
+2. `WALKTHROUGH.md`
+3. `REPRODUCIBILITY.md`
+4. `INVENTORY.md`
+5. `COVERAGE.md`
 
 Then run:
 

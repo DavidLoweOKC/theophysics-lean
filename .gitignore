@@ -1,0 +1,13 @@
+/.lake/
+/build/
+/lake-packages/
+*.olean
+*.ilean
+*.c
+*.o
+*.so
+*.dll
+*.dylib
+*.exe
+.DS_Store
+Thumbs.db

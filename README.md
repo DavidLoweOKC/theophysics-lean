@@ -1,1 +1,41 @@
-Add .gitignore: Lean
+# Theophysics Lean 4 Formalization
+
+This repository is the reproducible Lean 4 capsule for the Theophysics formalization work.
+
+The short version:
+
+```bash
+lake build
+```
+
+If Lean 4 is installed through `elan`, that command should download/use the pinned Lean toolchain and check the project from beginning to end.
+
+## What is in this repo
+
+The repo contains the Lean files needed to reproduce the current formal layer:
+
+- `Final_Lean4_From_Excel.lean` - the original Excel-derived single-file spine.
+- `Theophysics_Core.lean` - the positive theorem surface and integration marker.
+- `Theophysics_Adversarial.lean` - negative tests, rejection theorems, false-positive guards, and boundary controls.
+- `Theophysics_Coherence.lean` - coherence, order, passive entropy, active discoherence, and restoration gates.
+- `Theophysics_Fracture.lean` - structured fracture/scar logic and repairability gates.
+- `Theophysics_Fall.lean` - conservative Fall formalization: separation, coupling, entanglement, and grace-floor structure.
+- `Theophysics_ChiEvaluator.lean` - deterministic skeleton of the chi evaluator: ten channels, product collapse, high-signal deception, pressure gradients, and Fruit output.
+
+## First read
+
+If you are not a Lean user, start with:
+
+1. `WALKTHROUGH.md`
+2. `REPRODUCIBILITY.md`
+3. `INVENTORY.md`
+
+Then run:
+
+```bash
+lake build
+```
+
+## Current scope
+
+This project verifies formal statements inside the definitions supplied in the Lean files. It does not ask Lean to verify every philosophical, theological, historical, or empirical claim surrounding the project. The important achievement here is narrower and stronger: the stated structures, gates, rejections, collapse rules, and adversarial controls compile in Lean 4 under the pinned toolchain.

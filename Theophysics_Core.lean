@@ -118,6 +118,13 @@ theorem hard_science_universality_marker :
     sameUniversalityClass quantumSignature relativitySignature ∧
     sameUniversalityClass thermodynamicsSignature relativitySignature :=
   Theophysics.Universality.hard_science_triple_same_cd_class
+theorem technical_six_domain_universality_marker :
+    sameUniversalityClass thermodynamicsSignature quantumSignature ∧
+    sameUniversalityClass quantumSignature relativitySignature ∧
+    sameUniversalityClass thermodynamicsSignature informationTheorySignature ∧
+    sameUniversalityClass quantumSignature controlSystemSignature ∧
+    sameUniversalityClass thermodynamicsSignature biologyHomeostasisSignature :=
+  Theophysics.Universality.technical_six_domain_same_cd_class
 theorem cross_preserves_substrate_identity : True := by trivial
 theorem incarnation_is_finite_compression : True := by trivial
 theorem incarnation_preserves_substrate_identity : True := by trivial
@@ -244,6 +251,9 @@ theorem core_pipeline_marker :
     CGate law10Healthy = 1 ∧
     sameUniversalityClass thermodynamicsSignature quantumSignature ∧
     sameUniversalityClass quantumSignature relativitySignature ∧
+    sameUniversalityClass thermodynamicsSignature informationTheorySignature ∧
+    sameUniversalityClass quantumSignature controlSystemSignature ∧
+    sameUniversalityClass thermodynamicsSignature biologyHomeostasisSignature ∧
     (isCross ⟨1,1,1,1,1,1,1,1,1,1⟩ ↔
       (⟨1,1,1,1,1,1,1,1,1,1⟩ : FactorState) = ⟨1,1,1,1,1,1,1,1,1,1⟩) :=
 by
@@ -257,6 +267,9 @@ by
     rfl,
     Theophysics.Universality.thermodynamics_quantum_same_cd_class,
     Theophysics.Universality.quantum_relativity_same_cd_class,
+    Theophysics.Universality.thermodynamics_information_same_cd_class,
+    Theophysics.Universality.quantum_control_system_same_cd_class,
+    Theophysics.Universality.thermodynamics_biology_homeostasis_same_cd_class,
     cross_is_unique_for_convergence ⟨1,1,1,1,1,1,1,1,1,1⟩
   ⟩
 

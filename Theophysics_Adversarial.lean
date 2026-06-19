@@ -139,6 +139,10 @@ theorem no_symmetric_no_arrow_candidate_as_thermodynamics_class :
     ¬ sameUniversalityClass symmetricNoArrowCandidate thermodynamicsSignature :=
   Theophysics.Universality.symmetric_no_arrow_not_thermodynamics_class
 
+theorem no_measured_threshold_candidate_without_collapse_behavior_as_information_class :
+    ¬ sameUniversalityClass measuredButNoCollapseCandidate informationTheorySignature :=
+  Theophysics.Universality.no_collapse_behavior_not_information_class
+
 -- Generated check-failure entries from theorem inventory negatives and boundaries.
 
 /-!

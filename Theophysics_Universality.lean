@@ -80,6 +80,33 @@ def relativitySignature : CDSignature where
   hasRestoration := true
   hasCollapseBehavior := true
 
+def informationTheorySignature : CDSignature where
+  hasCoherenceTerm := true
+  hasDecoherenceTerm := true
+  hasMeasurement := true
+  hasThreshold := true
+  hasAsymmetry := true
+  hasRestoration := true
+  hasCollapseBehavior := true
+
+def controlSystemSignature : CDSignature where
+  hasCoherenceTerm := true
+  hasDecoherenceTerm := true
+  hasMeasurement := true
+  hasThreshold := true
+  hasAsymmetry := true
+  hasRestoration := true
+  hasCollapseBehavior := true
+
+def biologyHomeostasisSignature : CDSignature where
+  hasCoherenceTerm := true
+  hasDecoherenceTerm := true
+  hasMeasurement := true
+  hasThreshold := true
+  hasAsymmetry := true
+  hasRestoration := true
+  hasCollapseBehavior := true
+
 def metaphorOnlySignature : CDSignature where
   hasCoherenceTerm := true
   hasDecoherenceTerm := true
@@ -116,6 +143,15 @@ def symmetricNoArrowCandidate : CDSignature where
   hasRestoration := true
   hasCollapseBehavior := true
 
+def measuredButNoCollapseCandidate : CDSignature where
+  hasCoherenceTerm := true
+  hasDecoherenceTerm := true
+  hasMeasurement := true
+  hasThreshold := true
+  hasAsymmetry := true
+  hasRestoration := true
+  hasCollapseBehavior := false
+
 ------------------------------------------------------------------------
 -- Positive universality-class theorems
 
@@ -131,6 +167,18 @@ theorem relativity_is_strong_cd_class :
     strongCDClass relativitySignature = true := by
   rfl
 
+theorem information_theory_is_strong_cd_class :
+    strongCDClass informationTheorySignature = true := by
+  rfl
+
+theorem control_system_is_strong_cd_class :
+    strongCDClass controlSystemSignature = true := by
+  rfl
+
+theorem biology_homeostasis_is_strong_cd_class :
+    strongCDClass biologyHomeostasisSignature = true := by
+  rfl
+
 theorem thermodynamics_quantum_same_cd_class :
     sameUniversalityClass thermodynamicsSignature quantumSignature := by
   exact ⟨rfl, rfl, rfl, rfl, rfl, rfl, rfl⟩
@@ -143,6 +191,28 @@ theorem quantum_relativity_same_cd_class :
     sameUniversalityClass quantumSignature relativitySignature := by
   exact ⟨rfl, rfl, rfl, rfl, rfl, rfl, rfl⟩
 
+theorem thermodynamics_information_same_cd_class :
+    sameUniversalityClass thermodynamicsSignature informationTheorySignature := by
+  exact ⟨rfl, rfl, rfl, rfl, rfl, rfl, rfl⟩
+
+theorem quantum_control_system_same_cd_class :
+    sameUniversalityClass quantumSignature controlSystemSignature := by
+  exact ⟨rfl, rfl, rfl, rfl, rfl, rfl, rfl⟩
+
+theorem thermodynamics_biology_homeostasis_same_cd_class :
+    sameUniversalityClass thermodynamicsSignature biologyHomeostasisSignature := by
+  exact ⟨rfl, rfl, rfl, rfl, rfl, rfl, rfl⟩
+
+theorem information_control_biology_same_cd_class :
+    sameUniversalityClass informationTheorySignature controlSystemSignature ∧
+    sameUniversalityClass controlSystemSignature biologyHomeostasisSignature ∧
+    sameUniversalityClass informationTheorySignature biologyHomeostasisSignature := by
+  exact ⟨
+    ⟨rfl, rfl, rfl, rfl, rfl, rfl, rfl⟩,
+    ⟨rfl, rfl, rfl, rfl, rfl, rfl, rfl⟩,
+    ⟨rfl, rfl, rfl, rfl, rfl, rfl, rfl⟩
+  ⟩
+
 theorem hard_science_triple_same_cd_class :
     sameUniversalityClass thermodynamicsSignature quantumSignature ∧
     sameUniversalityClass quantumSignature relativitySignature ∧
@@ -151,6 +221,20 @@ theorem hard_science_triple_same_cd_class :
     thermodynamics_quantum_same_cd_class,
     quantum_relativity_same_cd_class,
     thermodynamics_relativity_same_cd_class
+  ⟩
+
+theorem technical_six_domain_same_cd_class :
+    sameUniversalityClass thermodynamicsSignature quantumSignature ∧
+    sameUniversalityClass quantumSignature relativitySignature ∧
+    sameUniversalityClass thermodynamicsSignature informationTheorySignature ∧
+    sameUniversalityClass quantumSignature controlSystemSignature ∧
+    sameUniversalityClass thermodynamicsSignature biologyHomeostasisSignature := by
+  exact ⟨
+    thermodynamics_quantum_same_cd_class,
+    quantum_relativity_same_cd_class,
+    thermodynamics_information_same_cd_class,
+    quantum_control_system_same_cd_class,
+    thermodynamics_biology_homeostasis_same_cd_class
   ⟩
 
 ------------------------------------------------------------------------
@@ -210,6 +294,10 @@ theorem symmetric_no_arrow_candidate_is_not_strong_cd_class :
     strongCDClass symmetricNoArrowCandidate = false := by
   rfl
 
+theorem measured_but_no_collapse_candidate_is_not_strong_cd_class :
+    strongCDClass measuredButNoCollapseCandidate = false := by
+  rfl
+
 theorem metaphor_only_not_thermodynamics_class :
     ¬ sameUniversalityClass metaphorOnlySignature thermodynamicsSignature := by
   intro h
@@ -238,6 +326,13 @@ theorem symmetric_no_arrow_not_thermodynamics_class :
     h.2.2.2.2.1 ▸ rfl
   contradiction
 
+theorem no_collapse_behavior_not_information_class :
+    ¬ sameUniversalityClass measuredButNoCollapseCandidate informationTheorySignature := by
+  intro h
+  have hc : informationTheorySignature.hasCollapseBehavior = false :=
+    h.2.2.2.2.2.2 ▸ rfl
+  contradiction
+
 ------------------------------------------------------------------------
 -- Combined checkpoint
 
@@ -245,15 +340,25 @@ theorem universality_marker :
     strongCDClass thermodynamicsSignature = true ∧
     strongCDClass quantumSignature = true ∧
     strongCDClass relativitySignature = true ∧
+    strongCDClass informationTheorySignature = true ∧
+    strongCDClass controlSystemSignature = true ∧
+    strongCDClass biologyHomeostasisSignature = true ∧
     sameUniversalityClass thermodynamicsSignature quantumSignature ∧
     sameUniversalityClass quantumSignature relativitySignature ∧
+    sameUniversalityClass thermodynamicsSignature informationTheorySignature ∧
+    sameUniversalityClass quantumSignature controlSystemSignature ∧
+    sameUniversalityClass thermodynamicsSignature biologyHomeostasisSignature ∧
     strongCDClass metaphorOnlySignature = false ∧
     strongCDClass thresholdlessCandidate = false ∧
     strongCDClass unrestorableCandidate = false ∧
-    strongCDClass symmetricNoArrowCandidate = false := by
-  exact ⟨rfl, rfl, rfl,
+    strongCDClass symmetricNoArrowCandidate = false ∧
+    strongCDClass measuredButNoCollapseCandidate = false := by
+  exact ⟨rfl, rfl, rfl, rfl, rfl, rfl,
     thermodynamics_quantum_same_cd_class,
     quantum_relativity_same_cd_class,
-    rfl, rfl, rfl, rfl⟩
+    thermodynamics_information_same_cd_class,
+    quantum_control_system_same_cd_class,
+    thermodynamics_biology_homeostasis_same_cd_class,
+    rfl, rfl, rfl, rfl, rfl⟩
 
 end Theophysics.Universality

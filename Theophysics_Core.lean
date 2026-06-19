@@ -125,6 +125,17 @@ theorem technical_six_domain_universality_marker :
     sameUniversalityClass quantumSignature controlSystemSignature ∧
     sameUniversalityClass thermodynamicsSignature biologyHomeostasisSignature :=
   Theophysics.Universality.technical_six_domain_same_cd_class
+theorem universal_eleven_domain_universality_marker :
+    sameUniversalityClass thermodynamicsSignature quantumSignature ∧
+    sameUniversalityClass quantumSignature relativitySignature ∧
+    sameUniversalityClass thermodynamicsSignature informationTheorySignature ∧
+    sameUniversalityClass quantumSignature controlSystemSignature ∧
+    sameUniversalityClass thermodynamicsSignature biologyHomeostasisSignature ∧
+    sameUniversalityClass psychologyIntegrationSignature economicsFinanceSignature ∧
+    sameUniversalityClass economicsFinanceSignature computerScienceSignature ∧
+    sameUniversalityClass ethicsMoralOrderSignature theologyRestorationSignature ∧
+    sameUniversalityClass informationTheorySignature ethicsMoralOrderSignature :=
+  Theophysics.Universality.universal_eleven_domain_same_cd_class
 theorem cross_preserves_substrate_identity : True := by trivial
 theorem incarnation_is_finite_compression : True := by trivial
 theorem incarnation_preserves_substrate_identity : True := by trivial
@@ -254,6 +265,10 @@ theorem core_pipeline_marker :
     sameUniversalityClass thermodynamicsSignature informationTheorySignature ∧
     sameUniversalityClass quantumSignature controlSystemSignature ∧
     sameUniversalityClass thermodynamicsSignature biologyHomeostasisSignature ∧
+    sameUniversalityClass psychologyIntegrationSignature economicsFinanceSignature ∧
+    sameUniversalityClass economicsFinanceSignature computerScienceSignature ∧
+    sameUniversalityClass ethicsMoralOrderSignature theologyRestorationSignature ∧
+    sameUniversalityClass informationTheorySignature ethicsMoralOrderSignature ∧
     (isCross ⟨1,1,1,1,1,1,1,1,1,1⟩ ↔
       (⟨1,1,1,1,1,1,1,1,1,1⟩ : FactorState) = ⟨1,1,1,1,1,1,1,1,1,1⟩) :=
 by
@@ -270,6 +285,10 @@ by
     Theophysics.Universality.thermodynamics_information_same_cd_class,
     Theophysics.Universality.quantum_control_system_same_cd_class,
     Theophysics.Universality.thermodynamics_biology_homeostasis_same_cd_class,
+    Theophysics.Universality.psychology_economics_compsci_same_cd_class.1,
+    Theophysics.Universality.psychology_economics_compsci_same_cd_class.2.1,
+    Theophysics.Universality.ethics_theology_same_cd_class,
+    Theophysics.Universality.technical_to_moral_bridge_same_cd_class.1,
     cross_is_unique_for_convergence ⟨1,1,1,1,1,1,1,1,1,1⟩
   ⟩
 

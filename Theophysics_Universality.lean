@@ -107,6 +107,51 @@ def biologyHomeostasisSignature : CDSignature where
   hasRestoration := true
   hasCollapseBehavior := true
 
+def psychologyIntegrationSignature : CDSignature where
+  hasCoherenceTerm := true
+  hasDecoherenceTerm := true
+  hasMeasurement := true
+  hasThreshold := true
+  hasAsymmetry := true
+  hasRestoration := true
+  hasCollapseBehavior := true
+
+def economicsFinanceSignature : CDSignature where
+  hasCoherenceTerm := true
+  hasDecoherenceTerm := true
+  hasMeasurement := true
+  hasThreshold := true
+  hasAsymmetry := true
+  hasRestoration := true
+  hasCollapseBehavior := true
+
+def computerScienceSignature : CDSignature where
+  hasCoherenceTerm := true
+  hasDecoherenceTerm := true
+  hasMeasurement := true
+  hasThreshold := true
+  hasAsymmetry := true
+  hasRestoration := true
+  hasCollapseBehavior := true
+
+def ethicsMoralOrderSignature : CDSignature where
+  hasCoherenceTerm := true
+  hasDecoherenceTerm := true
+  hasMeasurement := true
+  hasThreshold := true
+  hasAsymmetry := true
+  hasRestoration := true
+  hasCollapseBehavior := true
+
+def theologyRestorationSignature : CDSignature where
+  hasCoherenceTerm := true
+  hasDecoherenceTerm := true
+  hasMeasurement := true
+  hasThreshold := true
+  hasAsymmetry := true
+  hasRestoration := true
+  hasCollapseBehavior := true
+
 def metaphorOnlySignature : CDSignature where
   hasCoherenceTerm := true
   hasDecoherenceTerm := true
@@ -152,6 +197,24 @@ def measuredButNoCollapseCandidate : CDSignature where
   hasRestoration := true
   hasCollapseBehavior := false
 
+def restorationLanguageOnlyCandidate : CDSignature where
+  hasCoherenceTerm := true
+  hasDecoherenceTerm := true
+  hasMeasurement := false
+  hasThreshold := false
+  hasAsymmetry := true
+  hasRestoration := true
+  hasCollapseBehavior := false
+
+def metricsOnlyNoRestorationCandidate : CDSignature where
+  hasCoherenceTerm := true
+  hasDecoherenceTerm := true
+  hasMeasurement := true
+  hasThreshold := true
+  hasAsymmetry := true
+  hasRestoration := false
+  hasCollapseBehavior := false
+
 ------------------------------------------------------------------------
 -- Positive universality-class theorems
 
@@ -177,6 +240,26 @@ theorem control_system_is_strong_cd_class :
 
 theorem biology_homeostasis_is_strong_cd_class :
     strongCDClass biologyHomeostasisSignature = true := by
+  rfl
+
+theorem psychology_integration_is_strong_cd_class :
+    strongCDClass psychologyIntegrationSignature = true := by
+  rfl
+
+theorem economics_finance_is_strong_cd_class :
+    strongCDClass economicsFinanceSignature = true := by
+  rfl
+
+theorem computer_science_is_strong_cd_class :
+    strongCDClass computerScienceSignature = true := by
+  rfl
+
+theorem ethics_moral_order_is_strong_cd_class :
+    strongCDClass ethicsMoralOrderSignature = true := by
+  rfl
+
+theorem theology_restoration_is_strong_cd_class :
+    strongCDClass theologyRestorationSignature = true := by
   rfl
 
 theorem thermodynamics_quantum_same_cd_class :
@@ -213,6 +296,30 @@ theorem information_control_biology_same_cd_class :
     ⟨rfl, rfl, rfl, rfl, rfl, rfl, rfl⟩
   ⟩
 
+theorem psychology_economics_compsci_same_cd_class :
+    sameUniversalityClass psychologyIntegrationSignature economicsFinanceSignature ∧
+    sameUniversalityClass economicsFinanceSignature computerScienceSignature ∧
+    sameUniversalityClass psychologyIntegrationSignature computerScienceSignature := by
+  exact ⟨
+    ⟨rfl, rfl, rfl, rfl, rfl, rfl, rfl⟩,
+    ⟨rfl, rfl, rfl, rfl, rfl, rfl, rfl⟩,
+    ⟨rfl, rfl, rfl, rfl, rfl, rfl, rfl⟩
+  ⟩
+
+theorem ethics_theology_same_cd_class :
+    sameUniversalityClass ethicsMoralOrderSignature theologyRestorationSignature := by
+  exact ⟨rfl, rfl, rfl, rfl, rfl, rfl, rfl⟩
+
+theorem technical_to_moral_bridge_same_cd_class :
+    sameUniversalityClass informationTheorySignature ethicsMoralOrderSignature ∧
+    sameUniversalityClass biologyHomeostasisSignature psychologyIntegrationSignature ∧
+    sameUniversalityClass controlSystemSignature computerScienceSignature := by
+  exact ⟨
+    ⟨rfl, rfl, rfl, rfl, rfl, rfl, rfl⟩,
+    ⟨rfl, rfl, rfl, rfl, rfl, rfl, rfl⟩,
+    ⟨rfl, rfl, rfl, rfl, rfl, rfl, rfl⟩
+  ⟩
+
 theorem hard_science_triple_same_cd_class :
     sameUniversalityClass thermodynamicsSignature quantumSignature ∧
     sameUniversalityClass quantumSignature relativitySignature ∧
@@ -235,6 +342,28 @@ theorem technical_six_domain_same_cd_class :
     thermodynamics_information_same_cd_class,
     quantum_control_system_same_cd_class,
     thermodynamics_biology_homeostasis_same_cd_class
+  ⟩
+
+theorem universal_eleven_domain_same_cd_class :
+    sameUniversalityClass thermodynamicsSignature quantumSignature ∧
+    sameUniversalityClass quantumSignature relativitySignature ∧
+    sameUniversalityClass thermodynamicsSignature informationTheorySignature ∧
+    sameUniversalityClass quantumSignature controlSystemSignature ∧
+    sameUniversalityClass thermodynamicsSignature biologyHomeostasisSignature ∧
+    sameUniversalityClass psychologyIntegrationSignature economicsFinanceSignature ∧
+    sameUniversalityClass economicsFinanceSignature computerScienceSignature ∧
+    sameUniversalityClass ethicsMoralOrderSignature theologyRestorationSignature ∧
+    sameUniversalityClass informationTheorySignature ethicsMoralOrderSignature := by
+  exact ⟨
+    thermodynamics_quantum_same_cd_class,
+    quantum_relativity_same_cd_class,
+    thermodynamics_information_same_cd_class,
+    quantum_control_system_same_cd_class,
+    thermodynamics_biology_homeostasis_same_cd_class,
+    psychology_economics_compsci_same_cd_class.1,
+    psychology_economics_compsci_same_cd_class.2.1,
+    ethics_theology_same_cd_class,
+    technical_to_moral_bridge_same_cd_class.1
   ⟩
 
 ------------------------------------------------------------------------
@@ -298,6 +427,14 @@ theorem measured_but_no_collapse_candidate_is_not_strong_cd_class :
     strongCDClass measuredButNoCollapseCandidate = false := by
   rfl
 
+theorem restoration_language_only_candidate_is_not_strong_cd_class :
+    strongCDClass restorationLanguageOnlyCandidate = false := by
+  rfl
+
+theorem metrics_only_no_restoration_candidate_is_not_strong_cd_class :
+    strongCDClass metricsOnlyNoRestorationCandidate = false := by
+  rfl
+
 theorem metaphor_only_not_thermodynamics_class :
     ¬ sameUniversalityClass metaphorOnlySignature thermodynamicsSignature := by
   intro h
@@ -333,6 +470,20 @@ theorem no_collapse_behavior_not_information_class :
     h.2.2.2.2.2.2 ▸ rfl
   contradiction
 
+theorem restoration_language_only_not_theology_class :
+    ¬ sameUniversalityClass restorationLanguageOnlyCandidate theologyRestorationSignature := by
+  intro h
+  have hm : theologyRestorationSignature.hasMeasurement = false :=
+    h.2.2.1 ▸ rfl
+  contradiction
+
+theorem metrics_only_no_restoration_not_economics_class :
+    ¬ sameUniversalityClass metricsOnlyNoRestorationCandidate economicsFinanceSignature := by
+  intro h
+  have hr : economicsFinanceSignature.hasRestoration = false :=
+    h.2.2.2.2.2.1 ▸ rfl
+  contradiction
+
 ------------------------------------------------------------------------
 -- Combined checkpoint
 
@@ -343,22 +494,37 @@ theorem universality_marker :
     strongCDClass informationTheorySignature = true ∧
     strongCDClass controlSystemSignature = true ∧
     strongCDClass biologyHomeostasisSignature = true ∧
+    strongCDClass psychologyIntegrationSignature = true ∧
+    strongCDClass economicsFinanceSignature = true ∧
+    strongCDClass computerScienceSignature = true ∧
+    strongCDClass ethicsMoralOrderSignature = true ∧
+    strongCDClass theologyRestorationSignature = true ∧
     sameUniversalityClass thermodynamicsSignature quantumSignature ∧
     sameUniversalityClass quantumSignature relativitySignature ∧
     sameUniversalityClass thermodynamicsSignature informationTheorySignature ∧
     sameUniversalityClass quantumSignature controlSystemSignature ∧
     sameUniversalityClass thermodynamicsSignature biologyHomeostasisSignature ∧
+    sameUniversalityClass psychologyIntegrationSignature economicsFinanceSignature ∧
+    sameUniversalityClass economicsFinanceSignature computerScienceSignature ∧
+    sameUniversalityClass ethicsMoralOrderSignature theologyRestorationSignature ∧
+    sameUniversalityClass informationTheorySignature ethicsMoralOrderSignature ∧
     strongCDClass metaphorOnlySignature = false ∧
     strongCDClass thresholdlessCandidate = false ∧
     strongCDClass unrestorableCandidate = false ∧
     strongCDClass symmetricNoArrowCandidate = false ∧
-    strongCDClass measuredButNoCollapseCandidate = false := by
-  exact ⟨rfl, rfl, rfl, rfl, rfl, rfl,
+    strongCDClass measuredButNoCollapseCandidate = false ∧
+    strongCDClass restorationLanguageOnlyCandidate = false ∧
+    strongCDClass metricsOnlyNoRestorationCandidate = false := by
+  exact ⟨rfl, rfl, rfl, rfl, rfl, rfl, rfl, rfl, rfl, rfl, rfl,
     thermodynamics_quantum_same_cd_class,
     quantum_relativity_same_cd_class,
     thermodynamics_information_same_cd_class,
     quantum_control_system_same_cd_class,
     thermodynamics_biology_homeostasis_same_cd_class,
-    rfl, rfl, rfl, rfl, rfl⟩
+    psychology_economics_compsci_same_cd_class.1,
+    psychology_economics_compsci_same_cd_class.2.1,
+    ethics_theology_same_cd_class,
+    technical_to_moral_bridge_same_cd_class.1,
+    rfl, rfl, rfl, rfl, rfl, rfl, rfl⟩
 
 end Theophysics.Universality

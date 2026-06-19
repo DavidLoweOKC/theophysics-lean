@@ -143,6 +143,14 @@ theorem no_measured_threshold_candidate_without_collapse_behavior_as_information
     ¬ sameUniversalityClass measuredButNoCollapseCandidate informationTheorySignature :=
   Theophysics.Universality.no_collapse_behavior_not_information_class
 
+theorem no_restoration_language_only_as_theology_class :
+    ¬ sameUniversalityClass restorationLanguageOnlyCandidate theologyRestorationSignature :=
+  Theophysics.Universality.restoration_language_only_not_theology_class
+
+theorem no_metrics_only_no_restoration_as_economics_class :
+    ¬ sameUniversalityClass metricsOnlyNoRestorationCandidate economicsFinanceSignature :=
+  Theophysics.Universality.metrics_only_no_restoration_not_economics_class
+
 -- Generated check-failure entries from theorem inventory negatives and boundaries.
 
 /-!

@@ -703,6 +703,54 @@ COVERAGE.md
 REPRODUCIBILITY.md
 ```
 
+
+## Strong-law mechanism upgrade: GAP-01 closed at mechanism-gate level
+
+The original product layer proves generic collapse:
+
+```text
+if a necessary factor is zero, chi collapses
+```
+
+The new strong-law mechanism layer adds the diagnostic step that was missing for Laws 1, 2, 9, and 10:
+
+```text
+defined domain failure -> gate forced to zero -> chi collapses
+```
+
+This is implemented in:
+
+```text
+Theophysics_LawMechanisms.lean
+```
+
+The four mechanism gates are:
+
+```text
+GGate: external dependency / source reception
+MGate: reference standard / alignment
+FGate: identity preservation / moral conservation
+CGate: whole-system integration / non-fragmentation
+```
+
+Law 1 now proves that self-sourcing, dependency denial, and closed-boundary conditions force the G gate to zero and then collapse chi.
+
+Law 2 now proves that absent reference, reference denial, directionless motion, and misalignment force the M gate to zero and then collapse chi.
+
+Law 9 now proves that identity erasure, untracked transformation, open ledger, and history erasure force the F gate to zero and then collapse chi.
+
+Law 10 now proves that fragmentation, local success without integration, and unbound contradiction force the C gate to zero and then collapse chi.
+
+The mechanism layer also proves healthy pass cases and near-miss adversarial controls, so the gates are not merely collapse machines. They admit defined coherence and reject defined failure.
+
+The compact Lean checkpoint is:
+
+```text
+Theophysics.LawMechanisms.strong_law_mechanism_marker
+```
+
+With this file compiled, GAP-01 is closed formally at the mechanism-gate level. That means the Lean package no longer only says that a zero factor collapses the product. It now also encodes why defined failures in Laws 1, 2, 9, and 10 force the relevant factor to zero under the stated definitions.
+
 ## 22. Scope and interpretation
 
 This section is the scope boundary for the packet.

@@ -4,6 +4,7 @@ import Theophysics_Coherence
 import Theophysics_Fracture
 import Theophysics_Fall
 import Theophysics_ChiEvaluator
+import Theophysics_LawMechanisms
 
 /-!
 # Theophysics_Adversarial
@@ -18,6 +19,7 @@ open Theophysics.Coherence
 open Theophysics.Fracture
 open Theophysics.Fall
 open Theophysics.ChiEvaluator
+open Theophysics.LawMechanisms
 
 -- Core-level consistency guards already validated as direct negations.
 #check_failure (show CouplingState.C0 = CouplingState.C1 from by rfl)
@@ -100,6 +102,23 @@ theorem no_high_signal_low_freedom_as_clean_signal :
 theorem no_decaying_pressure_as_positive_gradient :
     inferTwoPointGradient strongButDecayingStart strongButDecayingEnd = GradientLabel.negative :=
   Theophysics.ChiEvaluator.strong_but_decaying_has_negative_gradient
+
+-- Strong-law mechanism adversarial controls for GAP-01.
+theorem no_self_sourcing_as_open_G_gate :
+    GGate law1SelfSourcingCase = 0 :=
+  Theophysics.LawMechanisms.law1_open_boundary_but_self_sourcing_fails
+
+theorem no_unacknowledged_reference_as_M_alignment :
+    MGate law2UnacknowledgedReferenceCase = 0 :=
+  Theophysics.LawMechanisms.law2_reference_present_but_unacknowledged_fails
+
+theorem no_untracked_identity_as_F_conservation :
+    FGate law9UntrackedCase = 0 :=
+  Theophysics.LawMechanisms.law9_identity_preserved_but_untracked_fails
+
+theorem no_fragmented_local_success_as_C_integration :
+    CGate law10FragmentedLocalSuccessCase = 0 :=
+  Theophysics.LawMechanisms.law10_local_success_but_fragmented_fails
 
 -- Generated check-failure entries from theorem inventory negatives and boundaries.
 

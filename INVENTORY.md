@@ -42,3 +42,20 @@ Important marker theorems include:
 - `Theophysics.Fall.fall_spine_marker`
 
 These are not magic. They are compact checkpoints: if they compile, a bundle of key definitions and theorem dependencies still holds together.
+## Strong-law mechanism layer
+
+`Theophysics_LawMechanisms.lean` closes GAP-01 at the mechanism-gate level for Laws 1, 2, 9, and 10.
+
+It adds:
+
+- `GGate` for external dependency/source reception.
+- `MGate` for reference standard/alignment.
+- `FGate` for identity preservation/moral conservation.
+- `CGate` for whole-system integration/non-fragmentation.
+
+Each upgraded law now has positive-pass theorems, failure-mode gate-zero theorems, near-miss adversarial controls, and chi-collapse theorems.
+
+Key marker:
+
+- `Theophysics.LawMechanisms.strong_law_mechanism_marker`
+

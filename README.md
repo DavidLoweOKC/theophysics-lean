@@ -21,6 +21,7 @@ The repo contains the Lean files needed to reproduce the current formal layer:
 - `Theophysics_Fracture.lean` - structured fracture/scar logic and repairability gates.
 - `Theophysics_Fall.lean` - conservative Fall formalization: separation, coupling, entanglement, and grace-floor structure.
 - `Theophysics_ChiEvaluator.lean` - deterministic skeleton of the chi evaluator: ten channels, product collapse, high-signal deception, pressure gradients, and Fruit output.
+- `Theophysics_LawMechanisms.lean` - strong-law mechanism gates for Laws 1, 2, 9, and 10: domain failure, gate zero, and chi collapse.
 
 ## First read
 

@@ -26,3 +26,6 @@ lean_lib «Theophysics_ChiEvaluator»
 
 @[default_target]
 lean_lib «Theophysics_LawMechanisms»
+
+@[default_target]
+lean_lib «Theophysics_Universality»

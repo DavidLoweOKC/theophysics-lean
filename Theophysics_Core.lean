@@ -5,6 +5,7 @@ import Theophysics_Fracture
 import Theophysics_Fall
 import Theophysics_ChiEvaluator
 import Theophysics_LawMechanisms
+import Theophysics_Universality
 
 /-!
 # Theophysics_Core
@@ -20,6 +21,7 @@ open Theophysics.Fracture
 open Theophysics.Fall
 open Theophysics.ChiEvaluator
 open Theophysics.LawMechanisms
+open Theophysics.Universality
 
 -- Positive theorems (from exported theorem inventory)
 theorem C0_ne_C1 : CouplingState.C0 ≠ CouplingState.C1 := Theophysics.Experiment.C0_ne_C1
@@ -111,6 +113,11 @@ theorem law9_mechanism_gate_marker :
 theorem law10_mechanism_gate_marker :
     CGate law10Healthy = 1 :=
   rfl
+theorem hard_science_universality_marker :
+    sameUniversalityClass thermodynamicsSignature quantumSignature ∧
+    sameUniversalityClass quantumSignature relativitySignature ∧
+    sameUniversalityClass thermodynamicsSignature relativitySignature :=
+  Theophysics.Universality.hard_science_triple_same_cd_class
 theorem cross_preserves_substrate_identity : True := by trivial
 theorem incarnation_is_finite_compression : True := by trivial
 theorem incarnation_preserves_substrate_identity : True := by trivial
@@ -235,6 +242,8 @@ theorem core_pipeline_marker :
     MGate law2Healthy = 1 ∧
     FGate law9Healthy = 1 ∧
     CGate law10Healthy = 1 ∧
+    sameUniversalityClass thermodynamicsSignature quantumSignature ∧
+    sameUniversalityClass quantumSignature relativitySignature ∧
     (isCross ⟨1,1,1,1,1,1,1,1,1,1⟩ ↔
       (⟨1,1,1,1,1,1,1,1,1,1⟩ : FactorState) = ⟨1,1,1,1,1,1,1,1,1,1⟩) :=
 by
@@ -246,6 +255,8 @@ by
     rfl,
     rfl,
     rfl,
+    Theophysics.Universality.thermodynamics_quantum_same_cd_class,
+    Theophysics.Universality.quantum_relativity_same_cd_class,
     cross_is_unique_for_convergence ⟨1,1,1,1,1,1,1,1,1,1⟩
   ⟩
 

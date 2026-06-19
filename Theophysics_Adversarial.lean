@@ -5,6 +5,7 @@ import Theophysics_Fracture
 import Theophysics_Fall
 import Theophysics_ChiEvaluator
 import Theophysics_LawMechanisms
+import Theophysics_Universality
 
 /-!
 # Theophysics_Adversarial
@@ -20,6 +21,7 @@ open Theophysics.Fracture
 open Theophysics.Fall
 open Theophysics.ChiEvaluator
 open Theophysics.LawMechanisms
+open Theophysics.Universality
 
 -- Core-level consistency guards already validated as direct negations.
 #check_failure (show CouplingState.C0 = CouplingState.C1 from by rfl)
@@ -119,6 +121,23 @@ theorem no_untracked_identity_as_F_conservation :
 theorem no_fragmented_local_success_as_C_integration :
     CGate law10FragmentedLocalSuccessCase = 0 :=
   Theophysics.LawMechanisms.law10_local_success_but_fragmented_fails
+
+-- Universality-class adversarial controls.
+theorem no_metaphor_only_as_hard_science_universality_class :
+    strongCDClass metaphorOnlySignature = false :=
+  Theophysics.Universality.metaphor_only_is_not_strong_cd_class
+
+theorem no_thresholdless_candidate_as_quantum_class :
+    ¬ sameUniversalityClass thresholdlessCandidate quantumSignature :=
+  Theophysics.Universality.thresholdless_not_quantum_class
+
+theorem no_unrestorable_candidate_as_relativity_class :
+    ¬ sameUniversalityClass unrestorableCandidate relativitySignature :=
+  Theophysics.Universality.unrestorable_not_relativity_class
+
+theorem no_symmetric_no_arrow_candidate_as_thermodynamics_class :
+    ¬ sameUniversalityClass symmetricNoArrowCandidate thermodynamicsSignature :=
+  Theophysics.Universality.symmetric_no_arrow_not_thermodynamics_class
 
 -- Generated check-failure entries from theorem inventory negatives and boundaries.
 

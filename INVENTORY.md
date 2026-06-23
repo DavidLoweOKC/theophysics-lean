@@ -13,6 +13,9 @@ This file is a reader-facing map of the current Lean surface.
 | `Theophysics_Fracture.lean` | Structured fracture and repairability formal layer. |
 | `Theophysics_Fall.lean` | Fall/coupling/entanglement/grace-floor formal layer. |
 | `Theophysics_ChiEvaluator.lean` | Ten-channel chi evaluator formal skeleton. |
+| `Theophysics_MaxwellTrinity.lean` | Finite Maxwell/Trinity shape layer: quaternion survivor and failed alternatives. |
+| `Theophysics_DelayedChoice.lean` | Finite delayed-choice quantum-eraser shape layer: subset classification with raw-signal invariance. |
+| `Theophysics_GodTest.lean` | Finite God-marker gate pre-test: Christ-shaped full marker passes, counterfeit candidates fail. |
 
 ## Major theorem families
 
@@ -29,6 +32,9 @@ This file is a reader-facing map of the current Lean surface.
 - Chi evaluator collapse and high-signal deception.
 - Pressure-gradient improvement/decay.
 - Fruit and anti-Fruit output dominance.
+- Maxwell/Trinity finite-shape gate: only the quaternion case preserves the coupling invariant and passes the Trinity-structure gate.
+- Delayed-choice quantum-eraser finite-shape gate: D1/D2 erase which-path information and recover interference-like subsets; D3/D4 preserve which-path information and do not; the raw signal pattern remains invariant across later idler classification.
+- God-marker finite gate pre-test: perfect justice, perfect mercy, voluntary death-entry, no moral debt, truth and identity preservation, rightful death victory, non-borrowed authority, and communicable restoration are all required; counterfeit death-victory candidates fail at least one gate.
 - Adversarial rejection rows for bad substitutions, bad mappings, false-positive boundaries, denominator errors, memory errors, and structural Trinity/Maxwell controls.
 
 ## Integrity markers

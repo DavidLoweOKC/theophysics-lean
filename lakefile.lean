@@ -29,3 +29,12 @@ lean_lib «Theophysics_LawMechanisms»
 
 @[default_target]
 lean_lib «Theophysics_Universality»
+
+@[default_target]
+lean_lib «Theophysics_MaxwellTrinity»
+
+@[default_target]
+lean_lib «Theophysics_DelayedChoice»
+
+@[default_target]
+lean_lib «Theophysics_GodTest»

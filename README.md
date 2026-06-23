@@ -22,6 +22,9 @@ The repo contains the Lean files needed to reproduce the current formal layer:
 - `Theophysics_Fall.lean` - conservative Fall formalization: separation, coupling, entanglement, and grace-floor structure.
 - `Theophysics_ChiEvaluator.lean` - deterministic skeleton of the chi evaluator: ten channels, product collapse, high-signal deception, pressure gradients, and Fruit output.
 - `Theophysics_LawMechanisms.lean` - strong-law mechanism gates for Laws 1, 2, 9, and 10: domain failure, gate zero, and chi collapse.
+- `Theophysics_MaxwellTrinity.lean` - finite Maxwell/Trinity shape gate: the quaternion case passes, six malformed alternatives fail.
+- `Theophysics_DelayedChoice.lean` - finite delayed-choice quantum-eraser gate: erased/preserved coincidence subsets classify differently while the raw signal pattern remains invariant.
+- `Theophysics_GodTest.lean` - finite God-marker gate pre-test: the full Christ-shaped marker passes; counterfeit death-victory candidates fail at least one required gate.
 
 ## First read
 

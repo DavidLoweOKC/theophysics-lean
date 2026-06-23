@@ -6,6 +6,7 @@ import Theophysics_Fall
 import Theophysics_ChiEvaluator
 import Theophysics_LawMechanisms
 import Theophysics_Universality
+import Theophysics_MaxwellTrinity
 
 /-!
 # Theophysics_Core
@@ -22,6 +23,7 @@ open Theophysics.Fall
 open Theophysics.ChiEvaluator
 open Theophysics.LawMechanisms
 open Theophysics.Universality
+open Theophysics.MaxwellTrinity
 
 -- Positive theorems (from exported theorem inventory)
 theorem C0_ne_C1 : CouplingState.C0 ≠ CouplingState.C1 := Theophysics.Experiment.C0_ne_C1
@@ -214,12 +216,21 @@ theorem law7_healthy_score_passes_R_gate :
   Theophysics.Experiment.law7_healthy_score_passes_R_gate
 theorem law4Iso : True := by trivial
 theorem richLaw4Iso : True := by trivial
-theorem full_quaternion_product_has_coupling_invariant : True := by trivial
+theorem full_quaternion_product_has_coupling_invariant :
+    preservesCouplingInvariant EMSystem.quaternion = true :=
+  Theophysics.MaxwellTrinity.full_quaternion_product_has_coupling_invariant
 theorem full_scalar_vector_split_reconstructs_quaternion_product : True := by trivial
 theorem scalarOne_scalarTwo_same_vector_part : True := by trivial
-theorem quaternionEM_valid : True := by trivial
-theorem quaternionTrinityIso : True := by trivial
-theorem trinityRelational_valid : True := by trivial
+theorem quaternionEM_valid :
+    preservesCouplingInvariant EMSystem.quaternion = true ∧
+    trinityStructureValid EMSystem.quaternion = true :=
+  Theophysics.MaxwellTrinity.quaternionEM_valid
+theorem quaternionTrinityIso :
+    trinityStructureValid EMSystem.quaternion = true :=
+  Theophysics.MaxwellTrinity.quaternionTrinityIso
+theorem trinityRelational_valid :
+    trinityStructureValid EMSystem.quaternion = true :=
+  Theophysics.MaxwellTrinity.trinityRelational_valid
 theorem heaviside_passes_if_coupling_guard_removed : True := by trivial
 theorem modalism_passes_if_distinctness_guard_removed : True := by trivial
 theorem static_single_field_passes_if_dynamic_guard_removed : True := by trivial

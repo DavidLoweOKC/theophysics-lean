@@ -6,6 +6,7 @@ import Theophysics_Fall
 import Theophysics_ChiEvaluator
 import Theophysics_LawMechanisms
 import Theophysics_Universality
+import Theophysics_MaxwellTrinity
 
 /-!
 # Theophysics_Adversarial
@@ -22,6 +23,7 @@ open Theophysics.Fall
 open Theophysics.ChiEvaluator
 open Theophysics.LawMechanisms
 open Theophysics.Universality
+open Theophysics.MaxwellTrinity
 
 -- Core-level consistency guards already validated as direct negations.
 #check_failure (show CouplingState.C0 = CouplingState.C1 from by rfl)
@@ -234,27 +236,6 @@ def invertedMappingPreservesValue : Bool := false
 def law4IsoUsesInvertedMapping : Bool := false
 def misalignedCollapseRuleValid : Bool := false
 
-inductive EMSystem where
-  | quaternion
-  | vectorOnly
-  | heavisideVector
-  | modalist
-  | staticSingleField
-  | arbitraryThreePart
-  | relabeledRoles
-deriving DecidableEq, Repr
-
-def preservesCouplingInvariant : EMSystem -> Bool
-  | EMSystem.quaternion => true
-  | _ => false
-
-def trinityStructureValid : EMSystem -> Bool
-  | EMSystem.quaternion => true
-  | _ => false
-
-def vectorOnlyDeterminesFullProduct : Bool := false
-def sameDotCrossDeterminesQuaternionProduct : Bool := false
-
 structure JusticeMercyCase where
   offenderPays : Bool := false
   payerAuthorized : Bool := true
@@ -463,31 +444,31 @@ theorem misaligned_collapse_rule_invalid :
 -- Maxwell / Trinity shape controls.
 theorem vector_only_product_lacks_coupling_invariant :
     preservesCouplingInvariant EMSystem.vectorOnly = false := by
-  rfl
+  exact Theophysics.MaxwellTrinity.vector_only_product_lacks_coupling_invariant
 
 theorem same_dot_cross_but_different_quaternion_product :
     sameDotCrossDeterminesQuaternionProduct = false := by
-  rfl
+  exact Theophysics.MaxwellTrinity.same_dot_cross_but_different_quaternion_product
 
 theorem heavisideVectorEM_invalid :
     trinityStructureValid EMSystem.heavisideVector = false := by
-  rfl
+  exact Theophysics.MaxwellTrinity.heavisideVectorEM_invalid
 
 theorem modalism_invalid :
     trinityStructureValid EMSystem.modalist = false := by
-  rfl
+  exact Theophysics.MaxwellTrinity.modalism_invalid
 
 theorem staticSingleFieldEM_invalid :
     trinityStructureValid EMSystem.staticSingleField = false := by
-  rfl
+  exact Theophysics.MaxwellTrinity.staticSingleFieldEM_invalid
 
 theorem arbitraryThreePartSystem_invalid :
     trinityStructureValid EMSystem.arbitraryThreePart = false := by
-  rfl
+  exact Theophysics.MaxwellTrinity.arbitraryThreePartSystem_invalid
 
 theorem relabeledRoleSystem_invalid :
     trinityStructureValid EMSystem.relabeledRoles = false := by
-  rfl
+  exact Theophysics.MaxwellTrinity.relabeledRoleSystem_invalid
 
 -- Justice / Mercy operator controls.
 theorem offender_payment_fails_mercy_condition :

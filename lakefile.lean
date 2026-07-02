@@ -3,6 +3,8 @@ open Lake DSL
 
 package «Theophysics» where
 
+require "leanprover-community" / "mathlib"
+
 @[default_target]
 lean_lib «Final_Lean4_From_Excel»
 
@@ -38,3 +40,6 @@ lean_lib «Theophysics_DelayedChoice»
 
 @[default_target]
 lean_lib «Theophysics_GodTest»
+
+@[default_target]
+lean_lib «Theophysics_Canonization»
